@@ -2,74 +2,71 @@ package framework.model;
 
 import java.util.*;
 
-
-
-
 public class Customer implements ICustomer {
 
-	private String custName;
-	private String custEmailAddress;
-	private IAddress custAddress;
+	private String name;
+	private String email;
+	private IAddress address;
 	private List<IAccount> accountList;
 	private List<String> emailList;
-
-	public Customer(String name, String email, IAddress address) {
+	private CustomerType customerType;
+	public Customer(String name, String email, IAddress address, CustomerType customerType) {
 		
-
+		this.name = name;
+		this.email = email;
+		this.address = address;
+		this.accountList = new ArrayList<IAccount>();
+		this.emailList = new ArrayList<String>();
+		
+		this.customerType = customerType;
 	}
 
 	@Override
 	public String getName() {
 		// TODO Auto-generated method stub
-		return "";
+		return this.name;
 	}
 
 	@Override
 	public String getEmail() {
 		// TODO Auto-generated method stub
-		return "";
+		return this.email;
 	}
 
 	@Override
 	public void AddAccount(IAccount acct) {
-		accountList.add(acct);
+		this.accountList.add(acct);
 
 	}
 
 	@Override
 	public void removeAccount(IAccount acct) {
-		
+		this.accountList.remove(acct);
 	}
 
 	@Override
 	public List<IAccount> getAccountList() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.accountList;
 	}
 
 	@Override
-	public String getCustomerType() {
+	public CustomerType getCustomerType() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.customerType;
 	}
 
 	@Override
 	public void update(String emailMessage) {
 		// TODO Auto-generated method stub
-		
+		this.emailList.add(emailMessage);
 	}
 
-	public List<String> getEmailList() {
-		return null;
-	}
-
-	public void setEmailList(List<String> emailList) {
-	}
 
 	@Override
-	public String[] getCustomerDetails() {
+	public String getCustomerDetails() {
 
-		return null;
+		return "[" + this.name + "]";// maybe add plus address later
 
 	}
 

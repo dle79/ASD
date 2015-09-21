@@ -1,18 +1,17 @@
 package framework.model;
 
-import java.util.*;
 
-
-
-/**
- * 
- */
 public class CustomerFactory implements ICustomerFactory {
 
     @Override
-	public ICustomer createCustomer(String name, String customerType,
-			IAddress add, String email, String anyVal) {
+	public ICustomer createCustomer(String name, CustomerType customerType,
+			IAddress add, String email, String birtdate) {
 		// TODO Auto-generated method stub
-		return null;
+    	if (customerType == CustomerType.PERSONAL) {
+    		return new Person(name, email, add, birtdate);
+   		}
+    	
+   		//return new Organization(name, email, add, 10);
+    	return new Organization(name, email, add, 10); // will fix number employee parameter later
 	}
 }

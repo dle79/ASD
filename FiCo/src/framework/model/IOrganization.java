@@ -1,12 +1,9 @@
 package framework.model;
 
-
-/**
- * 
- */
 public interface IOrganization extends ICustomer {
 
-	public String getNumOfEmployees();
+	public int getNumOfEmployees();
 
-	public String getCustomerType();
+	public CustomerType getCustomerType();
+
 }

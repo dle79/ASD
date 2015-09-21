@@ -9,7 +9,7 @@ public interface ICustomer extends IFinCoObserver {
 	public void AddAccount(IAccount acct);
 	public void removeAccount(IAccount acct);
 	public List<IAccount>getAccountList();
-	public String getCustomerType();
-	public String[] getCustomerDetails();
+	public CustomerType getCustomerType();
+	public String getCustomerDetails();
 
 }

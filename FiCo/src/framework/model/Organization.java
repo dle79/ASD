@@ -1,21 +1,17 @@
 package framework.model;
-import java.util.*;
 
-/**
- * 
- */
 public class Organization extends Customer implements IOrganization {
 
-	public Organization(String name, String email, IAddress address) {
-		super(name, email, address);
+	private int numOfEmployees;
+	public Organization(String name, String email, IAddress address, int numOfEmployees) {
+		super(name, email, address, CustomerType.ORGANIZATION);
 		// TODO Auto-generated constructor stub
+		this.numOfEmployees = numOfEmployees;
 	}
 
 	@Override
-	public String getNumOfEmployees() {
+	public int getNumOfEmployees() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.numOfEmployees;
 	}
-
-
 }

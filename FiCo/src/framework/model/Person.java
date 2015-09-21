@@ -1,20 +1,18 @@
 package framework.model;
-import java.util.*;
 
-/**
- * 
- */
 public class Person extends Customer implements IPerson {
 
-	public Person(String name, String email, IAddress address) {
-		super(name, email, address);
+	private String birthDate;
+	public Person(String name, String email, IAddress address, String birthDate) {
+		super(name, email, address, CustomerType.PERSONAL);
 		// TODO Auto-generated constructor stub
+		this.birthDate = birthDate;
 	}
 
 	@Override
 	public String getBirthDate() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.birthDate;
 	}
 
 
