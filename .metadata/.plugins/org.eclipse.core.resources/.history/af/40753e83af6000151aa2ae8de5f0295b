@@ -1,0 +1,28 @@
+package framework.model;
+
+public class Transaction implements ITransaction {
+
+	private String date;
+	private double amount;
+	 public Transaction(String newdate, Double newamount) {
+		date = newdate;
+		amount = newamount;
+	}
+	
+	@Override
+	public String getDate() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Double getAmount() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void setAmount(double amount) {
+		this.amount = amount;
+	}
+
+}

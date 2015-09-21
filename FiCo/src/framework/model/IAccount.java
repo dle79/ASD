@@ -37,9 +37,5 @@ public interface IAccount {
      */
     public double getInterestRate();
 
-    /**
-     * @return
-     */
-    public AcctType getAcctType();
-
+    
 }

@@ -5,8 +5,14 @@ import java.util.*;
 /**
  * 
  */
-public class Account implements IAccount {
+public abstract class  Account implements IAccount {
 
+	private double balance;
+	private String acctNo;
+	private ICustomer accountOwner;
+	private double interestRate;
+	private List<ITransaction> transactions;
+	
     /**
      * Default constructor
      */
@@ -27,12 +33,14 @@ public class Account implements IAccount {
 	@Override
 	public double getBalance() {
 		// TODO Auto-generated method stub
-		return 0;
+		return balance;
 	}
 
 	@Override
 	public void deposit(double amount) {
-		// TODO Auto-generated method stub
+		ITransaction t = new Transaction(this.getAcctNo(), amount);
+		transactions.add(t);
+		
 		
 	}
 
@@ -45,20 +53,16 @@ public class Account implements IAccount {
 	@Override
 	public ICustomer getAcctOwner() {
 		// TODO Auto-generated method stub
-		return null;
+		return accountOwner;
 	}
 
 	@Override
 	public double getInterestRate() {
 		// TODO Auto-generated method stub
-		return 0;
+		return interestRate;
 	}
 
-	@Override
-	public AcctType getAcctType() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 
 }

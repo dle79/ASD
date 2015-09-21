@@ -1,0 +1,65 @@
+!SESSION 2015-09-21 14:56:47.219 -----------------------------------------------
+eclipse.buildId=4.5.0.I20150603-2000
+java.version=1.8.0_60
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-09-21 14:57:01.183
+!MESSAGE Unable to acquire PluginConverter service during generation for: /home/mohamed/Dropbox/IDEs/eclipseJEE/plugins/binary.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-09-21 14:57:01.188
+!MESSAGE Unable to acquire PluginConverter service during generation for: /home/mohamed/Dropbox/IDEs/eclipseJEE/plugins/features.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-09-21 14:57:01.213
+!MESSAGE Unable to acquire PluginConverter service during generation for: /home/mohamed/Dropbox/IDEs/eclipseJEE/plugins/plugins.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-09-21 14:57:02.160
+!MESSAGE Unable to acquire PluginConverter service during generation for: /home/mohamed/Dropbox/IDEs/eclipseJEE/plugins/binary.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-09-21 14:57:02.166
+!MESSAGE Unable to acquire PluginConverter service during generation for: /home/mohamed/Dropbox/IDEs/eclipseJEE/plugins/features.
+
+!ENTRY org.eclipse.equinox.p2.publisher.eclipse 4 0 2015-09-21 14:57:02.178
+!MESSAGE Unable to acquire PluginConverter service during generation for: /home/mohamed/Dropbox/IDEs/eclipseJEE/plugins/plugins.
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2015-09-21 14:57:13.026
+!MESSAGE [SCR] Found components with duplicated names! Details: 
+Component1 : Component[
+	name = org.eclipse.equinox.p2.transport.ecf
+	activate = activate
+	deactivate = deactivate
+	modified = 
+	configuration-policy = optional
+	factory = null
+	autoenable = true
+	immediate = false
+	implementation = org.eclipse.equinox.internal.p2.transport.ecf.ECFTransportComponent
+	state = Unsatisfied
+	properties = {p2.agent.servicename=org.eclipse.equinox.internal.p2.repository.Transport}
+	serviceFactory = false
+	serviceInterface = [org.eclipse.equinox.p2.core.spi.IAgentServiceFactory]
+	references = null
+	located in bundle = org.eclipse.equinox.p2.transport.ecf_1.1.100.v20150423-1455 [971]
+]
+Component2: Component[
+	name = org.eclipse.equinox.p2.transport.ecf
+	activate = activate
+	deactivate = deactivate
+	modified = 
+	configuration-policy = optional
+	factory = null
+	autoenable = true
+	immediate = false
+	implementation = org.eclipse.equinox.internal.p2.transport.ecf.ECFTransportComponent
+	state = Unsatisfied
+	properties = {p2.agent.servicename=org.eclipse.equinox.internal.p2.repository.Transport}
+	serviceFactory = false
+	serviceInterface = [org.eclipse.equinox.p2.core.spi.IAgentServiceFactory]
+	references = null
+	located in bundle = org.eclipse.equinox.p2.transport.ecf_1.1.100.v20150521-1342 [345]
+]  
+
+!ENTRY org.eclipse.ui 2 2 2015-09-21 14:59:08.731
+!MESSAGE Invalid preference category path: org.eclipse.linuxtools.javadocs.preferences1 (bundle: org.eclipse.linuxtools.javadocs, page: org.eclipse.linuxtools.internal.javadocs.ui.page1)
