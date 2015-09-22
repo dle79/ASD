@@ -38,6 +38,12 @@ public class CreditCardMainFrame extends MainFrame {
 				.getNewCreditCardAccountListener(this));
 		buttonGenBill
 				.addActionListener(control.getGenerateBillListener(this));
+		
+		withdrawButton.setText("Charge");
+		frameJPanel.add(withdrawButton);
+		withdrawButton.setBounds(468, 164, 96, 33);
+		
+		
 
 	}
 

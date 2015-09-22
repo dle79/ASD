@@ -23,7 +23,7 @@ public class CreditCardController {
 		return instance;
 	}
 
-	class NewAccountListener implements ActionListener {
+	class AddNewCCardListener implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
@@ -46,7 +46,7 @@ public class CreditCardController {
 
 	public ActionListener getNewCreditCardAccountListener(MainFrame frame) {
 
-		return new NewAccountListener();
+		return new AddNewCCardListener();
 
 	}
 
