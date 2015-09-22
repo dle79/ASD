@@ -21,9 +21,7 @@ public class AddNewCreditCardFrame extends AddAccountFrame {
 
 	public AddNewCreditCardFrame(MainFrame parent) {
 		super(parent);
-		getContentPane().setLayout(null);
-		setSize(301,400);
-		
+		control = CreditCardController.getInstance();
 		radiobtnGold.setText("Gold");
 		radiobtnGold.setActionCommand("Gold");
 		getContentPane().add(radiobtnGold);
