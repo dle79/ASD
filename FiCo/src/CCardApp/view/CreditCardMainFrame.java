@@ -43,6 +43,12 @@ public class CreditCardMainFrame extends MainFrame {
 		frameJPanel.add(withdrawButton);
 		withdrawButton.setBounds(468, 164, 96, 33);
 		
+		model.addColumn("Name");
+		model.addColumn("CC number");
+		model.addColumn("Exp date");
+		model.addColumn("Type");
+		model.addColumn("Balance");
+		rowdata = new String[8];
 		
 
 	}
