@@ -11,7 +11,7 @@ public class BankAccountFactory extends AccountFactory {
 	public IAccount createAccount(ICustomer cust, String acctNo, AcctType acctType) {
 		// TODO Auto-generated method stub
 
-		if (acctType == acctType.CHECKING) {
+		if (acctType == AcctType.CHECKING) {
 			return new Checking(cust, acctNo);
 		}
 		return new Savings(cust, acctNo);

@@ -11,7 +11,5 @@ public class AddCompanyAccountFrame extends AddAccountFrame {
 	public AddCompanyAccountFrame(MainFrame parent) {
 		super(parent);
 		control = BankController.getInstance();
-
-
 	}
 }

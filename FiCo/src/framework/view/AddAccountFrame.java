@@ -9,8 +9,8 @@ public class AddAccountFrame extends javax.swing.JDialog implements IGUI {
 
 	private MainFrame parentframe;
 	
-	protected JRadioButton ChkRadioButton = new JRadioButton();
-	protected JRadioButton SavRadioButton = new JRadioButton();
+//	protected JRadioButton ChkRadioButton = new JRadioButton();
+//	protected JRadioButton SavRadioButton = new JRadioButton();
 	
 	private JLabel nameLabel = new JLabel();
 	private JLabel streetJLabel = new JLabel();
@@ -42,15 +42,15 @@ public class AddAccountFrame extends javax.swing.JDialog implements IGUI {
 		setVisible(false);
 		setLocationRelativeTo(null); // at middle of screen 
 		
-		ChkRadioButton.setText("Checking");
-		ChkRadioButton.setActionCommand("Checkings");
-		getContentPane().add(ChkRadioButton);
-		ChkRadioButton.setBounds(12, 12, 100, 24);
+//		ChkRadioButton.setText("Checking");
+//		ChkRadioButton.setActionCommand("Checkings");
+//		getContentPane().add(ChkRadioButton);
+//		ChkRadioButton.setBounds(12, 12, 100, 24);
 		
-		SavRadioButton.setText("Saving");
-		SavRadioButton.setActionCommand("Savings");
-		getContentPane().add(SavRadioButton);
-		SavRadioButton.setBounds(12, 36, 100, 24);
+//		SavRadioButton.setText("Saving");
+//		SavRadioButton.setActionCommand("Savings");
+//		getContentPane().add(SavRadioButton);
+//		SavRadioButton.setBounds(12, 36, 100, 24);
 		
 		nameLabel.setText("Name");
 		getContentPane().add(nameLabel);

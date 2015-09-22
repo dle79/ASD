@@ -11,11 +11,22 @@ public class AddPersonAccountFrame extends AddAccountFrame {
 	private BankController control;
 
 	JTextField birthDateTextField = new JTextField();
-	
+	protected JRadioButton ChkRadioButton = new JRadioButton();
+	protected JRadioButton SavRadioButton = new JRadioButton();
 	
 	public AddPersonAccountFrame(MainFrame parent) {
 		super(parent);
 		control = BankController.getInstance();
+
+		ChkRadioButton.setText("Checking");
+		ChkRadioButton.setActionCommand("Checkings");
+		getContentPane().add(ChkRadioButton);
+		ChkRadioButton.setBounds(12, 12, 100, 24);
+		
+		SavRadioButton.setText("Saving");
+		SavRadioButton.setActionCommand("Savings");
+		getContentPane().add(SavRadioButton);
+		SavRadioButton.setBounds(12, 36, 100, 24);
 		
 		super.birthDateLabel.setText("Birth date");
 		getContentPane().add(birthDateLabel);
@@ -25,8 +36,8 @@ public class AddPersonAccountFrame extends AddAccountFrame {
 		birthDateTextField.setBounds(84, 252, 156, 20);
 		
 		super.JButton_OK.addActionListener(control.getAddPersonAccountFrameOkListener(this));
-		super.ChkRadioButton.addMouseListener(control.getCheckingBoxListener());
-		super.SavRadioButton.addMouseListener(control.getSavingBoxListener());
+		ChkRadioButton.addMouseListener(control.getCheckingBoxListener());
+		SavRadioButton.addMouseListener(control.getSavingBoxListener());
 
 	}
 
