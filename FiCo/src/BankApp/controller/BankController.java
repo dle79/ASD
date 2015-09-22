@@ -61,7 +61,8 @@ public class BankController {
 			personalDialog.setVisible(true);
 		}
 	}
-	public ActionListener getPersonAccountListener() {
+	// set setPersonAccountListener
+	public ActionListener setPersonAccountListener() {
 		// TODO Auto-generated method stub
 		
 		return new PersonAccountListner();
@@ -136,14 +137,17 @@ public class BankController {
 
 	}
 
+	// set CompanyAccountListner
+	public ActionListener setCompanyAccountListener() {
+		return new CompAccountListner();
+	}
 	
-	// set setCompanyAccountListner
-	class CompanyAccountListner implements ActionListener {
+	class CompAccountListner implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			JDialog buisnessDialog = new AddCompanyAccountFrame(bankFrame);
-			buisnessDialog.setVisible(true);
+			JDialog companyDialog = new AddCompanyAccountFrame(bankFrame);
+			companyDialog.setVisible(true);
 
 		}
 	}
