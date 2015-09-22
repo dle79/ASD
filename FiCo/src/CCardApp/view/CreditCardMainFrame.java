@@ -8,7 +8,7 @@ import javax.swing.UIManager;
 import CCardApp.controller.CreditCardController;
 import framework.view.MainFrame;
 
-public class CreditcardFrame extends MainFrame {
+public class CreditCardMainFrame extends MainFrame {
 
 	/**
 	 * Dung Le 
@@ -20,7 +20,7 @@ public class CreditcardFrame extends MainFrame {
 	
 	private CreditCardController control;
 	
-	public CreditcardFrame(String title) {
+	public CreditCardMainFrame(String title) {
 		super();
 		control = CreditCardController.getInstance();
 
@@ -35,9 +35,15 @@ public class CreditcardFrame extends MainFrame {
 		buttonGenBill.setBounds(240, 20, 192, 33);
 		
 		buttonAddNewCCard.addActionListener(control
-				.getNewCreditCardAccountListener(this));
+				.getAddNewCreditCardListener(this));
 		buttonGenBill
 				.addActionListener(control.getGenerateBillListener(this));
+		
+		withdrawButton.setText("Charge");
+		frameJPanel.add(withdrawButton);
+		withdrawButton.setBounds(468, 164, 96, 33);
+		
+		
 
 	}
 
@@ -54,7 +60,7 @@ public class CreditcardFrame extends MainFrame {
 
 			// Create a new instance of our application's frame, and make it
 			// visible.
-			(new CreditcardFrame("Credit Card Application"))
+			(new CreditCardMainFrame("Credit Card Application"))
 					.setVisible(true);
 		} catch (Throwable t) {
 			t.printStackTrace();

@@ -5,11 +5,11 @@ import java.awt.event.ActionListener;
 
 import framework.view.MainFrame;
 import CCardApp.view.AddCreditcardFrame;
-import CCardApp.view.CreditcardFrame;
+import CCardApp.view.CreditCardMainFrame;
 
 public class CreditCardController {
 
-	private CreditcardFrame creditCardFrame;
+	private CreditCardMainFrame creditCardFrame;
 
 	private static CreditCardController instance;
 
@@ -23,7 +23,7 @@ public class CreditCardController {
 		return instance;
 	}
 
-	class NewAccountListener implements ActionListener {
+	class AddNewCCardListener implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
@@ -44,9 +44,9 @@ public class CreditCardController {
 
 	}
 
-	public ActionListener getNewCreditCardAccountListener(MainFrame frame) {
+	public ActionListener getAddNewCreditCardListener(MainFrame frame) {
 
-		return new NewAccountListener();
+		return new AddNewCCardListener();
 
 	}
 
