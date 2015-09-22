@@ -15,30 +15,28 @@ public class CreditcardFrame extends MainFrame {
 	 */
 	private static final long serialVersionUID = 54604709938475662L;
 
-	javax.swing.JButton JButton_NewCCAccount = new javax.swing.JButton();
-	javax.swing.JButton JButton_GenBill = new javax.swing.JButton();
+	javax.swing.JButton buttonAddNewCCard = new javax.swing.JButton();
+	javax.swing.JButton buttonGenBill = new javax.swing.JButton();
 	
 	private CreditCardController control;
 	
 	public CreditcardFrame(String title) {
 		super();
 		control = CreditCardController.getInstance();
-		JPanel JPanel1 = new JPanel();
-		JPanel1.setLayout(null);
-		getContentPane().add(BorderLayout.CENTER, JPanel1);
-		JPanel1.setBounds(0, 0, 575, 310);
+
+		frameJPanel.setBounds(0, 0, 575, 310);
 		this.setTitle(title);
-		JButton_NewCCAccount.setText("Add Credit Card account");
-		JPanel1.add(JButton_NewCCAccount);
-		JButton_NewCCAccount.setBounds(24, 20, 192, 33);
-		JButton_GenBill.setText("Generate Monthly Bills");
-		JButton_GenBill.setActionCommand("jGenButton");
-		JPanel1.add(JButton_GenBill);
-		JButton_GenBill.setBounds(240, 20, 192, 33);
+		buttonAddNewCCard.setText("Add New Credit Card");
+		frameJPanel.add(buttonAddNewCCard);
+		buttonAddNewCCard.setBounds(24, 20, 192, 33);
+		buttonGenBill.setText("Generate Monthly Bills");
+		buttonGenBill.setActionCommand("jGenButton");
+		frameJPanel.add(buttonGenBill);
+		buttonGenBill.setBounds(240, 20, 192, 33);
 		
-		JButton_NewCCAccount.addActionListener(control
+		buttonAddNewCCard.addActionListener(control
 				.getNewCreditCardAccountListener(this));
-		JButton_GenBill
+		buttonGenBill
 				.addActionListener(control.getGenerateBillListener(this));
 
 	}
