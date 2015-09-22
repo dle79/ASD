@@ -18,7 +18,7 @@ public class AddAccountFrame extends javax.swing.JDialog implements IGUI {
 	private JLabel zipLabel = new JLabel();
 	protected JLabel birthDateLabel = new JLabel();
 	protected JLabel numOfEnployeeLabel = new JLabel();
-	private JLabel emailLabel = new JLabel();
+	protected JLabel emailLabel = new JLabel();
 	
 	protected JTextField nameTextField = new JTextField();
 	protected JTextField streetTextField = new JTextField();
@@ -31,6 +31,8 @@ public class AddAccountFrame extends javax.swing.JDialog implements IGUI {
 	protected JButton JButton_Cancel = new JButton();
 	
 	protected JTextField emailTextField = new JTextField();
+	
+	protected JTextField txtfieldExpDate = new javax.swing.JTextField();
 	
 	public AddAccountFrame(MainFrame parent)
 	{
@@ -123,7 +125,7 @@ public class AddAccountFrame extends javax.swing.JDialog implements IGUI {
 		fields[3] = stateTextField.getText();
 		fields[4] = zipTextField.getText();
 		fields[5] = emailTextField.getText();
-		
+		fields[6] = txtfieldExpDate.getText();
 		return fields;
 	}
 	void JButtonCalcel_actionPerformed(ActionEvent event)
