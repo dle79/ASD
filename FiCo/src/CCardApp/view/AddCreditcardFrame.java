@@ -25,7 +25,7 @@ public class AddCreditcardFrame extends AddAccountFrame {
 	public AddCreditcardFrame(MainFrame parent) {
 		super(parent);
 		getContentPane().setLayout(null);
-		setSize(301,373);
+		setSize(301,400);
 		
 		JRadioButton_Gold.setText("Gold");
 		JRadioButton_Gold.setActionCommand("Gold");

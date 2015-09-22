@@ -38,7 +38,7 @@ public class AddAccountFrame extends javax.swing.JDialog implements IGUI {
 		this.parentframe = parent;
 		
 		getContentPane().setLayout(null);
-		setSize(301,373);
+		setSize(301,400);
 		setVisible(false);
 		setLocationRelativeTo(null); // at middle of screen 
 		
