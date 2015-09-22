@@ -44,7 +44,7 @@ public class CreditCardController {
 
 	}
 
-	public ActionListener getNewCreditCardAccountListener(MainFrame frame) {
+	public ActionListener getAddNewCreditCardListener(MainFrame frame) {
 
 		return new AddNewCCardListener();
 

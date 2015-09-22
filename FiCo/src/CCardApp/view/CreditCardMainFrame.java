@@ -35,7 +35,7 @@ public class CreditCardMainFrame extends MainFrame {
 		buttonGenBill.setBounds(240, 20, 192, 33);
 		
 		buttonAddNewCCard.addActionListener(control
-				.getNewCreditCardAccountListener(this));
+				.getAddNewCreditCardListener(this));
 		buttonGenBill
 				.addActionListener(control.getGenerateBillListener(this));
 		
