@@ -2,26 +2,21 @@ package framework.model;
 
 import java.util.*;
 
-/**
- * 
- */
 public abstract class  Account implements IAccount {
 
 	private double balance;
-	private String acctNo;
+	private String acctNumber;
 	private ICustomer accountOwner;
 	private double interestRate;
 	private List<ITransaction> transactions;
 	
-    /**
-     * Default constructor
-     */
-    public Account() {
-    }
+	public Account(String acctNumber, ICustomer cust) {
+		this.acctNumber = acctNumber;
+		this.accountOwner = cust;
+		this.transactions = new ArrayList<>();
+	}
 
-    /**
-     * 
-     */
+
     public Customer Subject;
 
 	@Override

@@ -5,6 +5,7 @@ import java.util.List;
 
 import framework.model.*;
 import BankApp.controller.BankController;
+import BankApp.model.BankAccountFactory;
 import BankApp.view.BankFrame;
 
 public class BankApplication extends FinCo{
@@ -24,5 +25,16 @@ public class BankApplication extends FinCo{
 		frm.setVisible(true);
 	}
 	
-	
+	public void addAccount(String name, IAddress addr, String anyVal,
+			AcctType acctType, CustomerType custType, String email) {
+
+		IAccountFactory bankFactory = new BankAccountFactory();
+	    ICustomerFactory factory=new CustomerFactory();
+		customer = factory.createCustomer(name, custType, addr, email, anyVal);
+		super.customerList.add(customer);
+		
+		acct = bankFactory.createAccount(customer, " ", acctType);
+		super.accountList.add(acct);
+
+	}
 }

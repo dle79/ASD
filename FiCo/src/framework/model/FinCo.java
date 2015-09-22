@@ -2,11 +2,11 @@ package framework.model;
 
 import java.util.*;
 
-/**
- * 
- */
 public class FinCo implements IFinCo, IFinCoSubject {
 
+	protected List<ICustomer> customerList;
+	protected List<IAccount> accountList;
+	
 	@Override
 	public void attach() {
 		// TODO Auto-generated method stub

@@ -25,6 +25,18 @@ public class BankFrame extends MainFrame {
 		super.frameJPanel.add(personAccountButton);
 		super.frameJPanel.add(companyAccountButton);
 		
+		
+		super.model.addColumn("Street");
+		super.model.addColumn("City");
+		super.model.addColumn("State");
+		super.model.addColumn("Zip");
+		super.model.addColumn("P/C");
+		super.model.addColumn("Ch/S");
+		super.model.addColumn("Amount");
+		
+		
+		personAccountButton.addActionListener(control.getPersonAccountListener());
+		
 	}
 
 	public void updateTable(String[] data) {
