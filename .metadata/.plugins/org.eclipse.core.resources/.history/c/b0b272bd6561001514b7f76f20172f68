@@ -1,0 +1,10 @@
+package BankApp.view;
+
+import BankApp.controller.BankController;
+import framework.view.TransactionFrame;
+
+public class DepositFrame extends TransactionFrame{
+	BankController control;
+	
+
+}

@@ -13,7 +13,7 @@ public abstract class  Account implements IAccount {
 	public Account(String acctNumber, ICustomer cust) {
 		this.acctNumber = acctNumber;
 		this.accountOwner = cust;
-		this.transactions = new ArrayList<>();
+		this.transactions = new ArrayList<ITransaction>();
 	}
 
 

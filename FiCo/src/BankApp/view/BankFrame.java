@@ -37,6 +37,8 @@ public class BankFrame extends MainFrame {
 		
 		personAccountButton.addActionListener(control.setPersonAccountListener());
 		companyAccountButton.addActionListener(control.setCompanyAccountListener());
+		depositButton.addActionListener(control.setDepositActionListener());
+		withdrawButton.addActionListener(control.setWithdrawActionListener());
 	}
 
 	public void updateTable(String[] data) {

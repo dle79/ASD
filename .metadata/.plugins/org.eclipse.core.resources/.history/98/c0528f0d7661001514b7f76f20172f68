@@ -1,0 +1,18 @@
+package BankApp.controller;
+
+public class BankControllerFactory {
+
+	private  static BankControllerFactory instance;
+
+	public static BankControllerFactory getInstance()
+	{
+		if(instance == null)
+			instance = new BankControllerFactory();
+		
+		return instance;
+	}
+	
+	
+	
+	
+}

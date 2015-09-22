@@ -1,0 +1,11 @@
+package framework.model;
+
+public class baseAccountFactory extends AccountFactory {
+
+	@Override
+	public IAccount createAccount(ICustomer customer, String acctNo, AcctType acctType) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

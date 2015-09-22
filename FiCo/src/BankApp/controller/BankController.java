@@ -13,6 +13,7 @@ import framework.model.CustomerType;
 import framework.model.IAddress;
 import framework.model.Address;
 import framework.view.AddAccountFrame;
+import framework.view.TransactionFrame;
 import BankApp.view.AddPersonAccountFrame;
 import BankApp.view.AddCompanyAccountFrame;
 import BankApp.view.BankFrame;
@@ -50,6 +51,31 @@ public class BankController {
 		bankFrame = frm;
 	}
 	
+	
+	class WithdrawActionListener implements ActionListener
+	{
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			JDialog depositeDialog = new TransactionFrame(bankFrame, "Withdraw", "123456");
+			depositeDialog.setVisible(true);
+		}
+		
+	}
+	
+	
+	class DepositeActionListener implements ActionListener
+	{
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			JDialog depositeDialog = new TransactionFrame(bankFrame, "Deposit", "123456");
+			depositeDialog.setVisible(true);
+		}
+		
+	}
 	// ActionListener for PersonAccountListner 
 	class PersonAccountListner implements ActionListener {
 
@@ -150,5 +176,14 @@ public class BankController {
 			companyDialog.setVisible(true);
 
 		}
+	}
+	public ActionListener setDepositActionListener() {
+		// TODO Auto-generated method stub
+		return new DepositeActionListener();
+	}
+
+	public ActionListener setWithdrawActionListener() {
+		// TODO Auto-generated method stub
+		return new WithdrawActionListener();
 	}
 }

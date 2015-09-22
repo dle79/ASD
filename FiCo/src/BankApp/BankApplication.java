@@ -5,6 +5,7 @@ import java.util.List;
 
 import framework.model.*;
 import BankApp.controller.BankController;
+import BankApp.controller.BankControllerFactory;
 import BankApp.model.BankAccountFactory;
 import BankApp.view.BankFrame;
 
@@ -18,7 +19,7 @@ public class BankApplication extends FinCo{
 		BankApplication bank = new BankApplication();
 		
 		// single instance if controller
-		BankController control = BankController.getInstance();
+		BankController control = BankControllerFactory.getInstance().getBankController();
 		control.setbank(bank);
 		BankFrame frm = new BankFrame();
 		control.setbankfrm(frm);

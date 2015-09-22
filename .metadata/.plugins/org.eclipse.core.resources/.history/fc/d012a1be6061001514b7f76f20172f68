@@ -1,0 +1,15 @@
+package framework.view;
+
+
+public class DepositFrame extends TransactionFrame implements IGUI
+{
+    private MainFrame parentframe;
+    private String accnr;
+    
+	public DepositFrame(MainFrame parent, String aaccnr)
+	{
+
+	}
+
+
+}

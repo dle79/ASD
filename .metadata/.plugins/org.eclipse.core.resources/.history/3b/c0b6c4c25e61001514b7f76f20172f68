@@ -1,0 +1,19 @@
+package framework.view;
+
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+
+public class TransactionFrame extends JDialog implements IGUI{
+	private MainFrame parentframe;
+	private String accnr;
+
+	private JLabel amountLabel = new JLabel();
+	private JLabel dateLabel = new JLabel();
+	
+	
+	public TransactionFrame(MainFrame parent, String title, String aaccnr) {
+		
+	}
+
+
+}
