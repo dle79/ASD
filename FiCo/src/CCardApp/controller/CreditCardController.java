@@ -3,10 +3,10 @@ package CCardApp.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import CCardApp.view.AddNewCreditCardFrame;
+import CCardApp.view.CreditCardMainFrame;
 import framework.view.AddAccountFrame;
 import framework.view.MainFrame;
-import CCardApp.view.AddCreditcardFrame;
-import CCardApp.view.CreditCardMainFrame;
 
 public class CreditCardController {
 
@@ -31,7 +31,7 @@ public class CreditCardController {
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			// TODO Auto-generated method stub
-			AddCreditcardFrame addCreditCardFrame = new AddCreditcardFrame(
+			AddNewCreditCardFrame addCreditCardFrame = new AddNewCreditCardFrame(
 					creditCardFrame);
 			addCreditCardFrame.setVisible(true);
 		}
