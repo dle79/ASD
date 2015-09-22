@@ -1,20 +1,30 @@
 package BankApp.view;
 
+import javax.swing.*;
+
 import BankApp.controller.BankController;
 import framework.view.MainFrame;
 
 
 public class BankFrame extends MainFrame {
 
-	javax.swing.JButton JButton_Pac = new javax.swing.JButton();
-	javax.swing.JButton JButton_Cac = new javax.swing.JButton();
+	private JButton personAccountButton = new JButton("Add personal account");
+	private JButton companyAccountButton = new JButton("Add company account");
 	private BankController control;
 
 	public BankFrame() {
 		super();
-		control = BankController.getInstance();
-		setTitle("Bank Application.");
-
+		this.control = BankController.getInstance();
+		super.setTitle("Bank Application.");
+		
+		super.withdrawButton.setText("Withdraw");
+		
+		personAccountButton.setBounds(24, 20, 192, 33);
+		companyAccountButton.setBounds(240, 20, 192, 33);
+		
+		super.frameJPanel.add(personAccountButton);
+		super.frameJPanel.add(companyAccountButton);
+		
 	}
 
 	public void updateTable(String[] data) {

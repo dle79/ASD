@@ -15,6 +15,7 @@ public class BankApplication extends FinCo{
 
 	public static void main(String[] args) {
 		BankApplication bank = new BankApplication();
+		
 		// single instance if controller
 		BankController control = BankController.getInstance();
 		control.setbank(bank);
