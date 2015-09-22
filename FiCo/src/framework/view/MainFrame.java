@@ -26,6 +26,9 @@ public class MainFrame extends JFrame implements IGUI {
 	protected DefaultTableModel model;
 	private JScrollPane infoJScrollPane;
 	
+	
+	protected String rowdata[];
+	
 	public MainFrame() {
 
 		// position x,y, width, height of Controller should be parsed from xml file (later)
@@ -52,6 +55,8 @@ public class MainFrame extends JFrame implements IGUI {
 		frameJPanel.add(infoJScrollPane);
 		infoJScrollPane.setBounds(12, 92, 444, 160);
 		infoJScrollPane.getViewport().add(infoTable);
+		
+		rowdata = new String[8];
 		
 		exitButton.setBounds(468, 224, 96, 33);
 		frameJPanel.add(exitButton);

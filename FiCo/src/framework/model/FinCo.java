@@ -7,6 +7,11 @@ public class FinCo implements IFinCo, IFinCoSubject {
 	protected List<ICustomer> customerList;
 	protected List<IAccount> accountList;
 	
+	public FinCo()
+	{
+		this.customerList = new ArrayList<ICustomer>();
+		this.accountList = new ArrayList<IAccount>();
+	}
 	@Override
 	public void attach() {
 		// TODO Auto-generated method stub

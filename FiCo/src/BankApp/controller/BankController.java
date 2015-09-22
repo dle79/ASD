@@ -10,7 +10,7 @@ import framework.model.CustomerType;
 import framework.model.IAddress;
 import framework.model.Address;
 import framework.view.AddAccountFrame;
-import BankApp.view.AddCompanyAccountFrame;
+import BankApp.view.AddPersonAccountFrame;
 import BankApp.view.BankFrame;
 import BankApp.BankApplication;
 
@@ -52,12 +52,14 @@ public class BankController {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
-			JDialog personalDialog = new AddCompanyAccountFrame(bankFrame);
+			
+			JDialog personalDialog = new AddPersonAccountFrame(bankFrame);
 			personalDialog.setVisible(true);
 		}
 	}
 	public ActionListener getPersonAccountListener() {
 		// TODO Auto-generated method stub
+		
 		return new PersonAccountListner();
 	}
 	
@@ -96,6 +98,7 @@ public class BankController {
 			rowdata[7] = fields[6];
 			bankFrame.updateTable(rowdata);
 			addAccountFrame.setVisible(false);
+			
 		}
 
 	}
@@ -106,12 +109,14 @@ public class BankController {
 	
 	
 	class SavingBoxListener extends java.awt.event.MouseAdapter {
+		@Override
 		public void mouseClicked(java.awt.event.MouseEvent event) {
 			acctType = AcctType.SAVINGS;
 		}
 	}
 
 	class CheckingBoxListener extends java.awt.event.MouseAdapter {
+		@Override
 		public void mouseClicked(java.awt.event.MouseEvent event) {
 			acctType = AcctType.CHECKING;
 		}

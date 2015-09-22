@@ -40,7 +40,8 @@ public class AddAccountFrame extends javax.swing.JDialog implements IGUI {
 		getContentPane().setLayout(null);
 		setSize(301,373);
 		setVisible(false);
-
+		setLocationRelativeTo(null); // at middle of screen 
+		
 		ChkRadioButton.setText("Checking");
 		ChkRadioButton.setActionCommand("Checkings");
 		getContentPane().add(ChkRadioButton);
@@ -95,6 +96,7 @@ public class AddAccountFrame extends javax.swing.JDialog implements IGUI {
 		JButton_OK.setActionCommand("OK");
 		getContentPane().add(JButton_OK);
 		JButton_OK.setBounds(48,312,84,24);
+		
 		JButton_Cancel.setText("Cancel");
 		JButton_Cancel.setActionCommand("Cancel");
 		getContentPane().add(JButton_Cancel);
