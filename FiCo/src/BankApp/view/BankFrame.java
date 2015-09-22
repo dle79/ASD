@@ -35,8 +35,8 @@ public class BankFrame extends MainFrame {
 		super.model.addColumn("Amount");
 		
 		
-		personAccountButton.addActionListener(control.getPersonAccountListener());
-		
+		personAccountButton.addActionListener(control.setPersonAccountListener());
+		companyAccountButton.addActionListener(control.setCompanyAccountListener());
 	}
 
 	public void updateTable(String[] data) {
