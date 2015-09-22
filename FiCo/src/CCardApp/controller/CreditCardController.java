@@ -3,16 +3,18 @@ package CCardApp.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
 import CCardApp.view.AddNewCreditCardFrame;
 import CCardApp.view.CreditcardFrame;
 import CCardApp.CCreditApplication;
+import framework.controller.Controller;
 import framework.model.AcctType;
 import framework.model.Address;
 import framework.model.CustomerType;
 import framework.model.IAddress;
 import framework.view.AddAccountFrame;
+import framework.view.DepositFrame;
 import framework.view.MainFrame;
+import framework.view.TransactionFrame;
 
 public class CreditCardController {
 
@@ -24,7 +26,13 @@ public class CreditCardController {
 	private AddAccountFrame addAccountFrame;
 	private AcctType accountType;
 	private CustomerType customerType;
-	private CreditCardController() {
+	
+	private int currentSelection;
+	private String accountNo;
+	
+	private CreditCardController() 
+	{
+		
 	}
 
 	public static CreditCardController getInstance() {
@@ -141,5 +149,29 @@ public class CreditCardController {
 		public void mouseClicked(java.awt.event.MouseEvent event) {
 			accountType = AcctType.SILVER;
 		}
+	}
+	
+	// section for Deposit
+	public ActionListener getDepositListener(MainFrame frame) {
+		return new DepositListener();
+
+	}
+	
+	class DepositListener implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+
+			currentSelection = creditCardFrame.infoTable.getSelectionModel()
+					.getMinSelectionIndex();
+			//creditCardFrame.
+			if (currentSelection >= 0) {
+				accountNo = (String) creditCardFrame.model.getValueAt(currentSelection, 1);
+				DepositFrame deposit = new DepositFrame(creditCardFrame, accountNo);
+				//currentActiveFrame = deposit;
+				deposit.setVisible(true);
+			}
+		}
+
 	}
 }
