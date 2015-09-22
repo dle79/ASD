@@ -5,6 +5,7 @@ import java.awt.BorderLayout;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 
+import CCardApp.controller.CreditCardController;
 import framework.view.MainFrame;
 
 public class CreditcardFrame extends MainFrame {
@@ -17,9 +18,11 @@ public class CreditcardFrame extends MainFrame {
 	javax.swing.JButton JButton_NewCCAccount = new javax.swing.JButton();
 	javax.swing.JButton JButton_GenBill = new javax.swing.JButton();
 	
-
+	private CreditCardController control;
+	
 	public CreditcardFrame(String title) {
 		super();
+		control = CreditCardController.getInstance();
 		JPanel JPanel1 = new JPanel();
 		JPanel1.setLayout(null);
 		getContentPane().add(BorderLayout.CENTER, JPanel1);
@@ -32,6 +35,12 @@ public class CreditcardFrame extends MainFrame {
 		JButton_GenBill.setActionCommand("jGenButton");
 		JPanel1.add(JButton_GenBill);
 		JButton_GenBill.setBounds(240, 20, 192, 33);
+		
+		JButton_NewCCAccount.addActionListener(control
+				.getNewCreditCardAccountListener(this));
+		JButton_GenBill
+				.addActionListener(control.getGenerateBillListener(this));
+
 	}
 
 	static public void main(String args[]) {
