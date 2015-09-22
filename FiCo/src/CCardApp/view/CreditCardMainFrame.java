@@ -49,10 +49,21 @@ public class CreditCardMainFrame extends MainFrame {
 		model.addColumn("Type");
 		model.addColumn("Balance");
 		rowdata = new String[8];
-		
-
 	}
 
+	public void updateTable(String[] data) {
+		rowdata[0] = data[0]; //
+		rowdata[1] = data[1];
+		rowdata[2] = data[2];
+		rowdata[3] = data[3];
+		rowdata[4] = data[4];
+		rowdata[5] = data[5];
+		rowdata[6] = data[6];
+		rowdata[7] = data[7];
+		model.addRow(rowdata);
+		infoTable.getSelectionModel().setAnchorSelectionIndex(-1);
+	}
+	
 	static public void main(String args[]) {
 		try {
 			// Add the following code if you want the Look and Feel

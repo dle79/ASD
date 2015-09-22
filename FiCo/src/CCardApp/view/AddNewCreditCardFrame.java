@@ -1,14 +1,10 @@
 package CCardApp.view;
 
-import java.awt.BorderLayout;
-
-import javax.swing.JPanel;
-import javax.swing.UIManager;
-
+import CCardApp.controller.CreditCardController;
 import framework.view.AddAccountFrame;
 import framework.view.MainFrame;
 
-public class AddCreditcardFrame extends AddAccountFrame {
+public class AddNewCreditCardFrame extends AddAccountFrame {
 
 	/**
 	 * Dung Le
@@ -21,8 +17,9 @@ public class AddCreditcardFrame extends AddAccountFrame {
 	javax.swing.JRadioButton radiobtnGold = new javax.swing.JRadioButton();
 	javax.swing.JRadioButton radiobtnSilver = new javax.swing.JRadioButton();
 	javax.swing.JRadioButton radiobtnBronze = new javax.swing.JRadioButton();
+	CreditCardController control;
 
-	public AddCreditcardFrame(MainFrame parent) {
+	public AddNewCreditCardFrame(MainFrame parent) {
 		super(parent);
 		getContentPane().setLayout(null);
 		setSize(301,400);
@@ -56,6 +53,12 @@ public class AddCreditcardFrame extends AddAccountFrame {
 		getContentPane().add(lblExpDate);
 		lblExpDate.setForeground(java.awt.Color.black);
 		lblExpDate.setBounds(12, 276, 72, 24);
+		
+		JButton_OK.addActionListener(control
+				.getAddNewCreditCardOkListener(this));
+		radiobtnSilver.addMouseListener(control.getRadioButtonSilverListener());
+		radiobtnBronze.addMouseListener(control.getRadioButtonBronzeListener());
+		radiobtnGold.addMouseListener(control.getRadioButtonGoldListener());
 
 	}
 
