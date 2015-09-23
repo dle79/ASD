@@ -30,4 +30,16 @@ public class Silver extends CreditCardAccount {
 		this.interestRate = interestRate;
 	}
 
+	@Override
+	public void deposit(double amount, String date) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void withdraw(double amount, String date) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

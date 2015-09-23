@@ -29,4 +29,16 @@ public class Gold extends CreditCardAccount {
 	public void setInterestRate(double interestRate) {
 		this.interestRate = interestRate;
 	}
+
+	@Override
+	public void deposit(double amount, String date) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void withdraw(double amount, String date) {
+		// TODO Auto-generated method stub
+		
+	}
 }

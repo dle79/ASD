@@ -6,15 +6,12 @@ import java.awt.event.ActionListener;
 import CCardApp.view.AddNewCreditCardFrame;
 import CCardApp.view.CreditcardFrame;
 import CCardApp.CCreditApplication;
-import framework.controller.Controller;
 import framework.model.AcctType;
 import framework.model.Address;
 import framework.model.CustomerType;
 import framework.model.IAddress;
 import framework.view.AddAccountFrame;
-import framework.view.DepositFrame;
 import framework.view.MainFrame;
-import framework.view.TransactionFrame;
 
 public class CreditCardController {
 
@@ -29,6 +26,8 @@ public class CreditCardController {
 	
 	private int currentSelection;
 	private String accountNo;
+	private CCardApp.view.DepositFrame depositFrame;
+	private CCardApp.view.DepositFrame deposit;
 	
 	private CreditCardController() 
 	{
@@ -162,16 +161,34 @@ public class CreditCardController {
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 
-			currentSelection = creditCardFrame.infoTable.getSelectionModel()
-					.getMinSelectionIndex();
-			//creditCardFrame.
+			currentSelection = creditCardFrame.infoTable.getSelectionModel().getMinSelectionIndex();
+			
 			if (currentSelection >= 0) {
 				accountNo = (String) creditCardFrame.model.getValueAt(currentSelection, 1);
-				DepositFrame deposit = new DepositFrame(creditCardFrame, accountNo);
-				//currentActiveFrame = deposit;
+				deposit = new CCardApp.view.DepositFrame(creditCardFrame, accountNo);
+
 				deposit.setVisible(true);
 			}
 		}
 
+	}
+	
+	public ActionListener getDepositOKListener(CCardApp.view.DepositFrame depositFrame2) {
+		depositFrame = depositFrame2;
+		System.out.println("khuong");
+		depositFrame.dispose();
+		return new DepositOKListener();
+	}
+	
+	class DepositOKListener implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+
+			double amount = Double.parseDouble(depositFrame.getAmount().toString());
+			System.out.println("Amount is " + amount);
+			creditCardFrame.model.setValueAt(amount, currentSelection, 4);
+			depositFrame.dispose();
+		}
 	}
 }

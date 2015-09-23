@@ -12,11 +12,26 @@ public class Bronze extends CreditCardAccount {
 		super(cust, accnr, expDate);
 	}
 
+
+	@Override
+	public void deposit(double amount, String date) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void withdraw(double amount, String date) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
 	@Override
 	public double getCurrentMonthlyBalance() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
 
 	@Override
 	public double getMonthlyDues() {

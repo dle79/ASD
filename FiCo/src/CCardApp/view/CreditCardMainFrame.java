@@ -1,8 +1,5 @@
 package CCardApp.view;
 
-import java.awt.BorderLayout;
-
-import javax.swing.JPanel;
 import javax.swing.UIManager;
 
 import CCardApp.controller.CreditCardController;

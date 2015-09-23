@@ -29,4 +29,11 @@ public class CreditCardFactory extends AccountFactory {
 		return super.createCustomer(name, customerType, add, email, anyVal);
 	}
 
+	@Override
+	public IAccount createAccount(ICustomer customer, String acctNo,
+			AcctType acctType) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
