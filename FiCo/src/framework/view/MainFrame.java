@@ -8,6 +8,11 @@ import javax.swing.table.DefaultTableModel;
 
 import com.sun.xml.internal.bind.unmarshaller.InfosetScanner;
 
+import BankApp.BankApplication;
+import CCardApp.CCreditApplication;
+import framework.controller.AppLoader;
+import framework.controller.IApp;
+
 public class MainFrame extends JFrame implements IGUI {
 
 	protected String accountnr, clientName, street, city, zip, state, email, 
@@ -32,6 +37,7 @@ public class MainFrame extends JFrame implements IGUI {
 	
 	public MainFrame() {
 
+		
 		// position x,y, width, height of Controller should be parsed from xml file (later)
 		setSize(600, 350);
 		setLocationRelativeTo(null);

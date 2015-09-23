@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import framework.controller.AppLoader;
+import framework.controller.IApp;
 import framework.model.*;
 import CCardApp.controller.*;
 import CCardApp.view.*;
@@ -11,20 +13,14 @@ import CCardApp.model.*;
 
 
 
-public class CCreditApplication extends FinCo {
+public class CCreditApplication extends FinCo implements IApp{
 	
 	private  ICustomer cust;
 	private IAccount acct;
 	public static void main(String args[])
 	{
-		CCreditApplication creditCardProcessingSystem = new CCreditApplication();
-        CreditCardController control = CreditCardController.getInstance();
-        control.setCreditcardProcessor(creditCardProcessingSystem);
-        CreditcardFrame mainFrame = new CreditcardFrame(
-                "Creditcard processing Application");
-        control.setCreditcardForm(mainFrame);
-
-        mainFrame.setVisible(true);		
+			AppLoader app = new AppLoader();
+			app.execute(new CCreditApplication());
 	}
 	
 	public void addAccount(String name, IAddress address, String value,
@@ -52,4 +48,17 @@ public class CCreditApplication extends FinCo {
 
         return report;
     }
+
+	@Override
+	public void execute() {
+		CCreditApplication creditCardProcessingSystem = new CCreditApplication();
+        CreditCardController control = CreditCardController.getInstance();
+        control.setCreditcardProcessor(creditCardProcessingSystem);
+        CreditcardFrame mainFrame = new CreditcardFrame(
+                "Creditcard processing Application");
+        control.setCreditcardForm(mainFrame);
+
+        mainFrame.setVisible(true);	
+		
+	}
 }
