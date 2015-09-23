@@ -26,8 +26,8 @@ public class CreditCardController {
 	
 	private int currentSelection;
 	private String accountNo;
+	private CCardApp.view.WithdrawFrame withdrawFrame;
 	private CCardApp.view.DepositFrame depositFrame;
-	private CCardApp.view.DepositFrame deposit;
 	
 	private CreditCardController() 
 	{
@@ -165,18 +165,17 @@ public class CreditCardController {
 			
 			if (currentSelection >= 0) {
 				accountNo = (String) creditCardFrame.model.getValueAt(currentSelection, 1);
-				deposit = new CCardApp.view.DepositFrame(creditCardFrame, accountNo);
+				depositFrame = new CCardApp.view.DepositFrame(creditCardFrame, accountNo);
 
-				deposit.setVisible(true);
+				depositFrame.setVisible(true);
 			}
 		}
 
 	}
 	
-	public ActionListener getDepositOKListener(CCardApp.view.DepositFrame depositFrame2) {
-		depositFrame = depositFrame2;
-		System.out.println("khuong");
-		depositFrame.dispose();
+	public ActionListener getDepositOKListener(CCardApp.view.DepositFrame depositframe) {
+		depositFrame = depositframe;
+		
 		return new DepositOKListener();
 	}
 	
@@ -190,5 +189,52 @@ public class CreditCardController {
 			creditCardFrame.model.setValueAt(amount, currentSelection, 4);
 			depositFrame.dispose();
 		}
+	}
+	
+	// section for Withdraw
+	public ActionListener getWithdrawOKListener(CCardApp.view.WithdrawFrame withdrawframe) {
+		withdrawFrame = withdrawframe;
+		
+		return new WithdrawOKListener();
+	}
+	
+	class WithdrawOKListener implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+
+			double amount = Double.parseDouble(withdrawFrame.getAmount().toString());
+			System.out.println("Amount is " + amount);
+			
+			double balance = (double)creditCardFrame.model.getValueAt(currentSelection, 4);
+			if(amount < balance)
+			{
+				creditCardFrame.model.setValueAt(balance - amount, currentSelection, 4);
+			}
+			withdrawFrame.dispose();
+		}
+	}
+	
+	
+	public ActionListener getWithdrawListener(MainFrame frame) {
+		return new WithdrawListener();
+
+	}
+	
+	class WithdrawListener implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+
+			currentSelection = creditCardFrame.infoTable.getSelectionModel().getMinSelectionIndex();
+			
+			if (currentSelection >= 0) {
+				accountNo = (String) creditCardFrame.model.getValueAt(currentSelection, 1);
+				withdrawFrame = new CCardApp.view.WithdrawFrame(creditCardFrame, accountNo);
+
+				withdrawFrame.setVisible(true);
+			}
+		}
+
 	}
 }

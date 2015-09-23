@@ -49,6 +49,7 @@ public class CreditcardFrame extends MainFrame {
 //buttonGenBill
 //		.addActionListener(control.getGenerateBillListener(this));		
 		super.depositButton.addActionListener(control.getDepositListener(this));
+		super.withdrawButton.addActionListener(control.getWithdrawListener(this));
 		
 	}
 
