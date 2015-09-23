@@ -177,7 +177,7 @@ public class BankController {
 
 		}
 	}
-
+<<<<<<< HEAD
 	public ActionListener setDepositActionListener() {
 		// TODO Auto-generated method stub
 		return new DepositeActionListener();
@@ -186,8 +186,7 @@ public class BankController {
 	public ActionListener setWithdrawActionListener() {
 		// TODO Auto-generated method stub
 		return new WithdrawActionListener();
-	}
-
+=======
 	
 	public ActionListener getAddCompanynAccountFrameOkListener(AddAccountFrame frame) {
 		addAccountFrame = frame;
@@ -232,6 +231,6 @@ public class BankController {
 			
 		}
 
-
+>>>>>>> fafcef13ee8d59807fddabf46cdbe0403e58c437
 	}
 }

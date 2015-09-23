@@ -25,18 +25,6 @@ public class WithdrawController {
 		
 	}
 
-	
-	class ButtonCancelActionListener implements ActionListener
-	{
-
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			
-			
-		}
-		
-	}
-	
 	public WithdrawController(WithdrawFrame df) {
 		this.withdrawframe = df;
 	}

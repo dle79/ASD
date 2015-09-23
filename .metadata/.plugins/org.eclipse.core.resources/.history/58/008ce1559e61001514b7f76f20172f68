@@ -186,7 +186,6 @@ public class BankController {
 	public ActionListener setWithdrawActionListener() {
 		// TODO Auto-generated method stub
 		return new WithdrawActionListener();
-	}
 
 	
 	public ActionListener getAddCompanynAccountFrameOkListener(AddAccountFrame frame) {
