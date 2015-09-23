@@ -18,7 +18,7 @@ public class WithdrawController {
 		public void actionPerformed(ActionEvent e) {
 			 withdrawframe = (WithdrawFrame) e.getSource();
 			 
-			 withdrawframe.getAccount().withdraw(withdrawframe.getAmount(), withdrawframe.getWithdrawDate());
+			 //withdrawframe.getAccount().withdraw(withdrawframe.getAmount(), withdrawframe.getWithdrawDate());
 			 
 			
 		}

@@ -1,48 +1,87 @@
 package BankApp.view;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import BankApp.controller.BankController;
-import BankApp.controller.BankControllerFactory;
-import BankApp.controller.WithdrawController;
-import framework.model.Account;
 import framework.view.MainFrame;
-import framework.view.TransactionFrame;
 
-public class WithdrawFrame extends TransactionFrame{
-	private String withdrawDate;
-	private double amount;
-	private Account account;
-	private WithdrawController control = BankControllerFactory.getInstance().getWithDrawController(this);
+import javax.swing.*;
+
+public class WithdrawFrame extends JDialog {
 	
-	public WithdrawFrame(MainFrame parent, String title, String aaccnr) {
-		super(parent, title, aaccnr);
+	BankController control;
+	
+	JLabel nameLabel = new JLabel();
+	JLabel amountLabel = new JLabel();
+	JTextField nameTextField = new JTextField();
+	public JButton JButton_OK = new JButton();
+	JButton JButton_Cancel = new JButton();
+	public JTextField depositTextField = new JTextField();
+	
+	private MainFrame parentframe;
+	private String accnr;
+	
+	public WithdrawFrame(MainFrame parent, String name) {
 		
-		this.JButton_OK.addActionListener(control.getButtonOKActionListener());
-		// TODO Auto-generated constructor stub
+		control = BankController.getInstance();
+		
+		parentframe=parent;
+		accnr=name;
+
+		setLocationRelativeTo(null); // at middle of screen 
+		
+		setTitle("Withdraw");
+
+		getContentPane().setLayout(null);
+		setSize(300,200);
+		setVisible(false);
+		nameLabel.setText("Name");
+		getContentPane().add(nameLabel);
+		nameLabel.setForeground(java.awt.Color.black);
+		nameLabel.setBounds(12,12,48,24);
+
+		amountLabel.setText("Amount");
+		getContentPane().add(amountLabel);
+		amountLabel.setForeground(java.awt.Color.black);
+		amountLabel.setBounds(12,48,55,24);
+		
+		nameTextField.setEditable(false);
+		getContentPane().add(nameTextField);
+		nameTextField.setBounds(84,12,144,24);
+		nameTextField.setText(accnr);
+		
+		JButton_OK.setText("OK");
+		JButton_OK.setActionCommand("OK");
+		getContentPane().add(JButton_OK);
+		JButton_OK.setBounds(36,84,84,24);
+		
+		JButton_Cancel.setText("Cancel");
+		JButton_Cancel.setActionCommand("Cancel");
+		getContentPane().add(JButton_Cancel);
+		JButton_Cancel.setBounds(156,84,84,24);
+		
+		getContentPane().add(depositTextField);
+		depositTextField.setBounds(84,48,144,24);
+		
+	    
+	    
+		JButton_OK.addActionListener(control.getWithdrawOKListener(this));
+		JButton_Cancel.addActionListener(new CloseListener() );
 	}
 
-	public String getWithdrawDate() {
-		return withdrawDate;
-	}
-
-	public void setWithdrawDate(String withdrawDate) {
-		this.withdrawDate = withdrawDate;
-	}
-
-	public double getAmount() {
-		return amount;
-	}
-
-	public void setAmount(double amount) {
-		this.amount = amount;
-	}
-
-	public Account getAccount() {
-		return account;
-	}
-
-	public void setAccount(Account account) {
-		this.account = account;
+	public String getAmount() {
+		
+		return depositTextField.getText();
 	}
 	
-	
+	private class CloseListener implements ActionListener
+	{
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			dispose();
+		}
+	}
 }

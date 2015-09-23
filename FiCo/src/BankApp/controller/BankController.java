@@ -29,6 +29,7 @@ public class BankController {
 	private int currentSelection;
 	private String accountNo;
 	private BankApp.view.DepositFrame depositFrame;
+	private BankApp.view.WithdrawFrame withdrawFrame;
 	// must have private constructor in Singleton pattern used
 	private BankController()
 	{
@@ -53,17 +54,17 @@ public class BankController {
 	}
 	
 	
-	class WithdrawActionListener implements ActionListener
-	{
-
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
-			JDialog depositeDialog = new TransactionFrame(bankFrame, "Withdraw", "123456");
-			depositeDialog.setVisible(true);
-		}
-		
-	}
+//	class WithdrawActionListener implements ActionListener
+//	{
+//
+//		@Override
+//		public void actionPerformed(ActionEvent e) {
+//			// TODO Auto-generated method stub
+//			JDialog depositeDialog = new TransactionFrame(bankFrame, "Withdraw", "123456");
+//			depositeDialog.setVisible(true);
+//		}
+//		
+//	}
 	
 	
 //	class DepositeActionListener implements ActionListener
@@ -220,11 +221,52 @@ public class BankController {
 		}
 	}
 	
+	// section for Withdraw
 	public ActionListener setWithdrawActionListener() {
 		// TODO Auto-generated method stub
 		return new WithdrawActionListener();
 	}
 
+	class WithdrawActionListener implements ActionListener
+	{
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			currentSelection = bankFrame.infoTable.getSelectionModel().getMinSelectionIndex();
+			
+			if (currentSelection >= 0) {
+				String[] fields = addAccountFrame.getAccountInfo();
+				withdrawFrame = new BankApp.view.WithdrawFrame(bankFrame, fields[0]);// fields[0]: name
+
+				withdrawFrame.setVisible(true);
+			}
+		}
+		
+	}
+
+	public ActionListener getWithdrawOKListener(BankApp.view.WithdrawFrame withdrawframe) {
+		withdrawFrame = withdrawframe;
+		
+		return new WithdrawOKListener();
+	}
+	
+	class WithdrawOKListener implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+
+			double amount = Double.parseDouble(withdrawFrame.getAmount().toString());
+			System.out.println("Amount is " + amount);
+			
+			double balance = (double)bankFrame.model.getValueAt(currentSelection, 6);
+			if(amount < balance)
+			{
+				bankFrame.model.setValueAt(balance - amount, currentSelection, 6);
+			}
+			withdrawFrame.dispose();
+		}
+	}
 	
 	public ActionListener getAddCompanynAccountFrameOkListener(AddAccountFrame frame) {
 		addAccountFrame = frame;

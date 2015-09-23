@@ -12,12 +12,12 @@ public class WithdrawFrame extends JDialog {
 	
 	CreditCardController control;
 	
-	JLabel JLabel1 = new JLabel();
-	JLabel JLabel2 = new JLabel();
-	JTextField JTextField_NAME = new JTextField();
+	JLabel nameLabel = new JLabel();
+	JLabel amountLabel = new JLabel();
+	JTextField nameTextField = new JTextField();
 	public JButton JButton_OK = new JButton();
 	JButton JButton_Cancel = new JButton();
-	public JTextField JTextField_Deposit = new JTextField();
+	public JTextField withdrawTextField = new JTextField();
 	
 	private MainFrame parentframe;
 	private String accnr;
@@ -36,20 +36,20 @@ public class WithdrawFrame extends JDialog {
 		getContentPane().setLayout(null);
 		setSize(300,200);
 		setVisible(false);
-		JLabel1.setText("Acc Nr");
-		getContentPane().add(JLabel1);
-		JLabel1.setForeground(java.awt.Color.black);
-		JLabel1.setBounds(12,12,48,24);
+		nameLabel.setText("Acc Nr");
+		getContentPane().add(nameLabel);
+		nameLabel.setForeground(java.awt.Color.black);
+		nameLabel.setBounds(12,12,48,24);
 
-		JLabel2.setText("Amount");
-		getContentPane().add(JLabel2);
-		JLabel2.setForeground(java.awt.Color.black);
-		JLabel2.setBounds(12,48,48,24);
+		amountLabel.setText("Amount");
+		getContentPane().add(amountLabel);
+		amountLabel.setForeground(java.awt.Color.black);
+		amountLabel.setBounds(12,48,55,24);
 		
-		JTextField_NAME.setEditable(false);
-		getContentPane().add(JTextField_NAME);
-		JTextField_NAME.setBounds(84,12,144,24);
-		JTextField_NAME.setText(accnr);
+		nameTextField.setEditable(false);
+		getContentPane().add(nameTextField);
+		nameTextField.setBounds(84,12,144,24);
+		nameTextField.setText(accnr);
 		
 		JButton_OK.setText("OK");
 		JButton_OK.setActionCommand("OK");
@@ -61,8 +61,8 @@ public class WithdrawFrame extends JDialog {
 		getContentPane().add(JButton_Cancel);
 		JButton_Cancel.setBounds(156,84,84,24);
 		
-		getContentPane().add(JTextField_Deposit);
-		JTextField_Deposit.setBounds(84,48,144,24);
+		getContentPane().add(withdrawTextField);
+		withdrawTextField.setBounds(84,48,144,24);
 		
 	    
 	    
@@ -72,7 +72,7 @@ public class WithdrawFrame extends JDialog {
 
 	public String getAmount() {
 		
-		return JTextField_Deposit.getText();
+		return withdrawTextField.getText();
 	}
 	
 	private class CloseListener implements ActionListener
@@ -81,7 +81,7 @@ public class WithdrawFrame extends JDialog {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
-			System.exit(0);
+			dispose();
 		}
 	}
 }
