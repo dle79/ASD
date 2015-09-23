@@ -165,10 +165,10 @@ public class BankController {
 
 	// set CompanyAccountListner
 	public ActionListener setCompanyAccountListener() {
-		return new CompAccountListner();
+		return new CompanyAccountListner();
 	}
 	
-	class CompAccountListner implements ActionListener {
+	class CompanyAccountListner implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
@@ -177,6 +177,7 @@ public class BankController {
 
 		}
 	}
+<<<<<<< HEAD
 	public ActionListener setDepositActionListener() {
 		// TODO Auto-generated method stub
 		return new DepositeActionListener();
@@ -185,5 +186,51 @@ public class BankController {
 	public ActionListener setWithdrawActionListener() {
 		// TODO Auto-generated method stub
 		return new WithdrawActionListener();
+=======
+	
+	public ActionListener getAddCompanynAccountFrameOkListener(AddAccountFrame frame) {
+		addAccountFrame = frame;
+		return new AddCompanyAccount();
+	}
+	
+	class AddCompanyAccount implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			// // TODO Auto-generated method stub
+			String[] fields = addAccountFrame.getAccountInfo();
+			/* field value:
+			 * 0: name
+			 * 1: street
+			 * 2: city
+			 * 3: state
+			 * 4: zip
+			 * 5: birthdate
+			 * 6: email
+			 * 7: num of employees
+			 * */
+			IAddress addr = new Address(fields[1], fields[2], fields[3],fields[4]);
+
+			bankApplication.addAccount(fields[0], addr, fields[5],
+					acctType, CustomerType.ORGANIZATION, fields[6]);
+			String[] rowdata = new String[8];
+			rowdata[0] = fields[1];
+			rowdata[1] = fields[2];
+			rowdata[2] = fields[3];
+			rowdata[3] = fields[4];
+			rowdata[4] = "C";
+			if(acctType == AcctType.CHECKING)
+				rowdata[5] = "C";
+			else if(acctType == AcctType.SAVINGS)
+				rowdata[5] = "S";
+			
+			rowdata[6] = "0.0";
+			rowdata[7] = fields[6];
+			bankFrame.updateTable(rowdata);
+			addAccountFrame.setVisible(false);
+			
+		}
+
+>>>>>>> fafcef13ee8d59807fddabf46cdbe0403e58c437
 	}
 }

@@ -48,8 +48,8 @@ public class BankFrame extends MainFrame {
 		super.rowdata[1] = data[1];	//city
 		super.rowdata[2] = data[2]; //state
 		super.rowdata[3] = data[3]; //zip
-		super.rowdata[4] = data[4]; //customer type
-		super.rowdata[5] = data[5]; //account type type
+		super.rowdata[4] = data[4]; //customer type (Company/Personal)
+		super.rowdata[5] = data[5]; //account type 
 		super.rowdata[6] = data[6]; //amount
 		super.rowdata[7] = data[7]; //email
 		super.model.addRow(super.rowdata);

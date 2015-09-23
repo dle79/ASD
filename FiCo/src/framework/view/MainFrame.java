@@ -10,7 +10,8 @@ import com.sun.xml.internal.bind.unmarshaller.InfosetScanner;
 
 public class MainFrame extends JFrame implements IGUI {
 
-	private String accountnr, clientName, street, city, zip, state, email, accountType, clientType, amountDeposit;
+	protected String accountnr, clientName, street, city, zip, state, email, 
+	accountType, clientType, amountDeposit;
 
 	// Common Button
 	protected JButton depositButton = new JButton("Deposit");
@@ -22,8 +23,8 @@ public class MainFrame extends JFrame implements IGUI {
 	
 	protected SymAction lSymAction = new SymAction();
 	
-	protected JTable infoTable;
-	protected DefaultTableModel model;
+	public JTable infoTable;
+	public DefaultTableModel model;
 	private JScrollPane infoJScrollPane;
 	
 	

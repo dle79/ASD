@@ -9,8 +9,7 @@ public class AddAccountFrame extends javax.swing.JDialog implements IGUI {
 
 	private MainFrame parentframe;
 	
-//	protected JRadioButton ChkRadioButton = new JRadioButton();
-//	protected JRadioButton SavRadioButton = new JRadioButton();
+
 	
 	private JLabel nameLabel = new JLabel();
 	private JLabel streetJLabel = new JLabel();
@@ -19,7 +18,7 @@ public class AddAccountFrame extends javax.swing.JDialog implements IGUI {
 	private JLabel zipLabel = new JLabel();
 	protected JLabel birthDateLabel = new JLabel();
 	protected JLabel numOfEnployeeLabel = new JLabel();
-	private JLabel emailLabel = new JLabel();
+	protected JLabel emailLabel = new JLabel();
 	
 	protected JTextField nameTextField = new JTextField();
 	protected JTextField streetTextField = new JTextField();
@@ -33,6 +32,8 @@ public class AddAccountFrame extends javax.swing.JDialog implements IGUI {
 	
 	protected JTextField emailTextField = new JTextField();
 	
+	protected JTextField txtfieldExpDate = new javax.swing.JTextField();
+	
 	public AddAccountFrame(MainFrame parent)
 	{
 		this.parentframe = parent;
@@ -42,15 +43,6 @@ public class AddAccountFrame extends javax.swing.JDialog implements IGUI {
 		setVisible(false);
 		setLocationRelativeTo(null); // at middle of screen 
 		
-//		ChkRadioButton.setText("Checking");
-//		ChkRadioButton.setActionCommand("Checkings");
-//		getContentPane().add(ChkRadioButton);
-//		ChkRadioButton.setBounds(12, 12, 100, 24);
-		
-//		SavRadioButton.setText("Saving");
-//		SavRadioButton.setActionCommand("Savings");
-//		getContentPane().add(SavRadioButton);
-//		SavRadioButton.setBounds(12, 36, 100, 24);
 		
 		nameLabel.setText("Name");
 		getContentPane().add(nameLabel);
@@ -78,19 +70,19 @@ public class AddAccountFrame extends javax.swing.JDialog implements IGUI {
 		zipLabel.setBounds(12,204,48,24);
 		
 		getContentPane().add(nameTextField);
-		nameTextField.setBounds(84,108,156,20);
+		nameTextField.setBounds(100,108,156,20);
 		
 		getContentPane().add(streetTextField);
-		streetTextField.setBounds(84,132,156,20);
+		streetTextField.setBounds(100,132,156,20);
 
 		getContentPane().add(cityTextField);
-		cityTextField.setBounds(84,156,156,20);
+		cityTextField.setBounds(100,156,156,20);
 		
 		getContentPane().add(stateTextField);
-		stateTextField.setBounds(84,180,156,20);
+		stateTextField.setBounds(100,180,156,20);
 				
 		getContentPane().add(zipTextField);
-		zipTextField.setBounds(84,204,156,20);
+		zipTextField.setBounds(100,204,156,20);
 		
 		JButton_OK.setText("OK");
 		JButton_OK.setActionCommand("OK");
@@ -105,11 +97,10 @@ public class AddAccountFrame extends javax.swing.JDialog implements IGUI {
 		emailLabel.setText("Email");
 		getContentPane().add(emailLabel);
 		emailLabel.setForeground(java.awt.Color.black);
-		emailLabel.setBounds(12,228,48,24);
+		emailLabel.setBounds(12, 252, 96, 24);
 		
 		getContentPane().add(emailTextField);
-		emailTextField.setBounds(84,228,156,20);
-		
+		emailTextField.setBounds(100, 252, 156, 20);
 	
 		SymAction lSymAction = new SymAction();
 		JButton_Cancel.addActionListener(lSymAction);
@@ -134,7 +125,7 @@ public class AddAccountFrame extends javax.swing.JDialog implements IGUI {
 		fields[3] = stateTextField.getText();
 		fields[4] = zipTextField.getText();
 		fields[5] = emailTextField.getText();
-		
+		fields[6] = txtfieldExpDate.getText();
 		return fields;
 	}
 	void JButtonCalcel_actionPerformed(ActionEvent event)

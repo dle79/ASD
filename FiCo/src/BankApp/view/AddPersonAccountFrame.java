@@ -18,6 +18,7 @@ public class AddPersonAccountFrame extends AddAccountFrame {
 		super(parent);
 		control = BankController.getInstance();
 
+		setTitle("Add Personal Account");
 		ChkRadioButton.setText("Checking");
 		ChkRadioButton.setActionCommand("Checkings");
 		getContentPane().add(ChkRadioButton);
@@ -31,9 +32,10 @@ public class AddPersonAccountFrame extends AddAccountFrame {
 		super.birthDateLabel.setText("Birth date");
 		getContentPane().add(birthDateLabel);
 		birthDateLabel.setForeground(java.awt.Color.black);
-		birthDateLabel.setBounds(12, 252, 96, 24);
+		birthDateLabel.setBounds(12,228,60,24);
+		
 		getContentPane().add(birthDateTextField);
-		birthDateTextField.setBounds(84, 252, 156, 20);
+		birthDateTextField.setBounds(100,228,156,20);
 		
 		super.JButton_OK.addActionListener(control.getAddPersonAccountFrameOkListener(this));
 		ChkRadioButton.addMouseListener(control.getCheckingBoxListener());
