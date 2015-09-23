@@ -1,6 +1,7 @@
 package framework.model;
 
 import java.util.*;
+import framework.view.MainFrame;
 
 public class FinCo implements IFinCo, IFinCoSubject {
 
@@ -48,6 +49,10 @@ public class FinCo implements IFinCo, IFinCoSubject {
 		
 	}
 
-
-
+	// stand alone framework application
+    public static void main(String args[])
+    {
+    	
+		(new MainFrame()).setVisible(true);
+	}
 }
