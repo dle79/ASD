@@ -38,9 +38,4 @@ public class DepositController {
 		}
 		
 	}
-	
-	public CancelActionListener getCancelAnswerListener()
-	{
-		return new CancelActionListener();
-	}
 }

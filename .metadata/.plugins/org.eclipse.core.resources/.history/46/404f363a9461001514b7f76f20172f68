@@ -16,6 +16,8 @@ public class WithdrawController {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			 withdrawframe = (WithdrawFrame) e.getSource();
+			 withdrawframe.getam
+			//withdrawframe.getAccount().withdraw();
 			
 		}
 		
@@ -37,6 +39,6 @@ public class WithdrawController {
 
 	public ActionListener getButtonOKActionListener() {
 		// TODO Auto-generated method stub
-		return new ButtonOKActionListener();
+		new ButtonOKActionListener();
 	}
 }

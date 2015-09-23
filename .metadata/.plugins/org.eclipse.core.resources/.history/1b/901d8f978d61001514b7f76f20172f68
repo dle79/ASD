@@ -30,7 +30,7 @@ public class BankApplication extends FinCo{
 			AcctType acctType, CustomerType custType, String email) {
 		
 		IAccountFactory bankFactory = new BankAccountFactory();
-	    ICustomerFactory factory = new CustomerFactory();
+	    ICustomerFactory factory=new CustomerFactory();
 		customer = factory.createCustomer(name, custType, addr, email, anyVal);
 		super.customerList.add(customer);
 		

@@ -16,6 +16,8 @@ public class WithdrawController {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			 withdrawframe = (WithdrawFrame) e.getSource();
+			 withdrawframe.getam
+			//withdrawframe.getAccount().withdraw();
 			
 		}
 		

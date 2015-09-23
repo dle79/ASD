@@ -3,3 +3,6 @@
 1442950384831	Delete element
 1442960594631	Encapsulate field 'withdrawframe'
 1442962611122	Delete element
+1442972323010	Encapsulate field 'withdrawDate'
+1442972330412	Encapsulate field 'amount'
+1442972550339	Encapsulate field 'account'

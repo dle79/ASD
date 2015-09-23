@@ -21,10 +21,6 @@ public interface IAccount {
      * @param double amount
      */
     public void deposit(double amount);
-    
-    public void deposit(double amount,String date);
-    
-    public void withdraw(double amount,String date);
 
     /**
      * @return

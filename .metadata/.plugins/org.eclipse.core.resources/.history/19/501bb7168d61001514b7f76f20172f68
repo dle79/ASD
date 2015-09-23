@@ -16,7 +16,6 @@ public class DepositController {
 	public DepositController(DepositFrame newDF) {
 		depositFrame = newDF;
 	}
-	
 	class OKButtonActionListener implements ActionListener
 	{
 
@@ -28,19 +27,4 @@ public class DepositController {
 		
 	}
 
-	class CancelActionListener implements ActionListener
-	{
-
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			
-			depositFrame.dispose();
-		}
-		
-	}
-	
-	public CancelActionListener getCancelAnswerListener()
-	{
-		return new CancelActionListener();
-	}
 }

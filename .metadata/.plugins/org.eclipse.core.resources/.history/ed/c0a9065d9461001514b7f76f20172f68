@@ -3,14 +3,12 @@ package BankApp.view;
 import BankApp.controller.BankController;
 import BankApp.controller.BankControllerFactory;
 import BankApp.controller.WithdrawController;
-import framework.model.Account;
 import framework.view.MainFrame;
 import framework.view.TransactionFrame;
 
 public class WithdrawFrame extends TransactionFrame{
 	private String withdrawDate;
 	private double amount;
-	private Account account;
 	private WithdrawController control = BankControllerFactory.getInstance().getWithDrawController(this);
 	
 	public WithdrawFrame(MainFrame parent, String title, String aaccnr) {
@@ -34,14 +32,6 @@ public class WithdrawFrame extends TransactionFrame{
 
 	public void setAmount(double amount) {
 		this.amount = amount;
-	}
-
-	public Account getAccount() {
-		return account;
-	}
-
-	public void setAccount(Account account) {
-		this.account = account;
 	}
 	
 	
