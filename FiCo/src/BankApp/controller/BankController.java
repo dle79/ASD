@@ -7,7 +7,6 @@ import java.awt.event.MouseListener;
 
 import javax.swing.JDialog;
 
-
 import framework.model.AcctType;
 import framework.model.CustomerType;
 import framework.model.IAddress;
@@ -27,7 +26,9 @@ public class BankController {
 	private BankFrame bankFrame;
 	private AddAccountFrame addAccountFrame;
 	private AcctType acctType;
-	
+	private int currentSelection;
+	private String accountNo;
+	private BankApp.view.DepositFrame depositFrame;
 	// must have private constructor in Singleton pattern used
 	private BankController()
 	{
@@ -65,17 +66,17 @@ public class BankController {
 	}
 	
 	
-	class DepositeActionListener implements ActionListener
-	{
-
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
-			JDialog depositeDialog = new TransactionFrame(bankFrame, "Deposit", "123456");
-			depositeDialog.setVisible(true);
-		}
-		
-	}
+//	class DepositeActionListener implements ActionListener
+//	{
+//
+//		@Override
+//		public void actionPerformed(ActionEvent e) {
+//			// TODO Auto-generated method stub
+//			JDialog depositeDialog = new TransactionFrame(bankFrame, "Deposit", "123456");
+//			depositeDialog.setVisible(true);
+//		}
+//		
+//	}
 	// ActionListener for PersonAccountListner 
 	class PersonAccountListner implements ActionListener {
 
@@ -114,7 +115,7 @@ public class BankController {
 
 			bankApplication.addAccount(fields[0], addr, fields[5],
 					acctType, CustomerType.PERSONAL, fields[6]);
-			String[] rowdata = new String[8];
+			String[] rowdata = new String[9];
 			rowdata[0] = fields[1];
 			rowdata[1] = fields[2];
 			rowdata[2] = fields[3];
@@ -126,7 +127,8 @@ public class BankController {
 				rowdata[5] = "S";
 			
 			rowdata[6] = "0.0";
-			rowdata[7] = fields[6];
+			rowdata[7] = fields[7];//acctNo
+			
 			bankFrame.updateTable(rowdata);
 			addAccountFrame.setVisible(false);
 			
@@ -178,11 +180,46 @@ public class BankController {
 		}
 	}
 
+	// section for Deposit
 	public ActionListener setDepositActionListener() {
 		// TODO Auto-generated method stub
 		return new DepositeActionListener();
 	}
+	class DepositeActionListener implements ActionListener {
 
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+
+			currentSelection = bankFrame.infoTable.getSelectionModel().getMinSelectionIndex();
+			
+			if (currentSelection >= 0) {
+				String[] fields = addAccountFrame.getAccountInfo();
+				depositFrame = new BankApp.view.DepositFrame(bankFrame, fields[0]);// fields[0]: name
+
+				depositFrame.setVisible(true);
+			}
+		}
+
+	}
+	
+	public ActionListener getDepositOKListener(BankApp.view.DepositFrame depositframe) {
+		depositFrame = depositframe;
+		
+		return new DepositOKListener();
+	}
+	
+	class DepositOKListener implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+
+			double amount = Double.parseDouble(depositFrame.getAmount().toString());
+			System.out.println("Amount is " + amount);
+			bankFrame.model.setValueAt(amount, currentSelection, 6);
+			depositFrame.dispose();
+		}
+	}
+	
 	public ActionListener setWithdrawActionListener() {
 		// TODO Auto-generated method stub
 		return new WithdrawActionListener();
@@ -214,7 +251,7 @@ public class BankController {
 
 			bankApplication.addAccount(fields[0], addr, fields[5],
 					acctType, CustomerType.ORGANIZATION, fields[6]);
-			String[] rowdata = new String[8];
+			String[] rowdata = new String[9];
 			rowdata[0] = fields[1];
 			rowdata[1] = fields[2];
 			rowdata[2] = fields[3];
@@ -226,7 +263,7 @@ public class BankController {
 				rowdata[5] = "S";
 			
 			rowdata[6] = "0.0";
-			rowdata[7] = fields[6];
+			rowdata[7] = fields[7];
 			bankFrame.updateTable(rowdata);
 			addAccountFrame.setVisible(false);
 			

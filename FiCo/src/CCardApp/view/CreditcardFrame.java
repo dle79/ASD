@@ -46,8 +46,7 @@ public class CreditcardFrame extends MainFrame {
 		rowdata = new String[8];
 		
 		buttonAddNewCCard.addActionListener(control.getAddNewCreditCardListener(this));
-//buttonGenBill
-//		.addActionListener(control.getGenerateBillListener(this));		
+		buttonGenBill.addActionListener(control.getGenerateBillListener(this));		
 		super.depositButton.addActionListener(control.getDepositListener(this));
 		super.withdrawButton.addActionListener(control.getWithdrawListener(this));
 		

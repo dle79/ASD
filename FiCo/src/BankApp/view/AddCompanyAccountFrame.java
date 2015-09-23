@@ -14,7 +14,7 @@ public class AddCompanyAccountFrame extends AddAccountFrame {
 	JLabel noOfEmployeeLabel = new JLabel();
 	protected JRadioButton ChkRadioButton = new JRadioButton();
 	protected JRadioButton SavRadioButton = new JRadioButton();
-	
+	private static int acctNo = 0;
 	public AddCompanyAccountFrame(MainFrame parent) {
 		super(parent);
 		control = BankController.getInstance();
@@ -41,5 +41,20 @@ public class AddCompanyAccountFrame extends AddAccountFrame {
 		ChkRadioButton.addMouseListener(control.getCheckingBoxListener());
 		SavRadioButton.addMouseListener(control.getSavingBoxListener());
 		
+		acctNo++;
+	}
+	
+	public String[] getAccountInfo() {
+		String[] fields = new String[8];
+		fields[0] = nameTextField.getText();
+		fields[1] = streetTextField.getText();
+		fields[2] = cityTextField.getText();
+		fields[3] = stateTextField.getText();
+		fields[4] = zipTextField.getText();
+		fields[5] = birthDateLabel.getText();
+		fields[6] = emailTextField.getText();
+		fields[7] = "" + acctNo;
+
+		return fields;
 	}
 }

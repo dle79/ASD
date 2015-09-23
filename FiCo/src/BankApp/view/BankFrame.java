@@ -11,7 +11,8 @@ public class BankFrame extends MainFrame {
 	private JButton personAccountButton = new JButton("Add personal account");
 	private JButton companyAccountButton = new JButton("Add company account");
 	private BankController control;
-
+	
+	
 	public BankFrame() {
 		super();
 		this.control = BankController.getInstance();
@@ -33,6 +34,7 @@ public class BankFrame extends MainFrame {
 		super.model.addColumn("P/C");
 		super.model.addColumn("Ch/S");
 		super.model.addColumn("Amount");
+		super.model.addColumn("ID");
 		
 		
 		personAccountButton.addActionListener(control.setPersonAccountListener());
@@ -40,11 +42,11 @@ public class BankFrame extends MainFrame {
 		depositButton.addActionListener(control.setDepositActionListener());
 		withdrawButton.addActionListener(control.setWithdrawActionListener());
 		
+		
 	}
 
 	public void updateTable(String[] data) {
-		
-		System.out.println(data);
+		System.out.println(data[8]);
 		super.rowdata[0] = data[0];	//street
 		super.rowdata[1] = data[1];	//city
 		super.rowdata[2] = data[2]; //state
@@ -53,8 +55,10 @@ public class BankFrame extends MainFrame {
 		super.rowdata[5] = data[5]; //account type type
 		super.rowdata[6] = data[6]; //amount
 		super.rowdata[7] = data[7]; //email
+		super.rowdata[8] = data[8]; //acctNo
 		super.model.addRow(super.rowdata);
 		super.infoTable.getSelectionModel().setAnchorSelectionIndex(-1);
+		
 	}
 
 

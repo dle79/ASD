@@ -2,6 +2,7 @@ package CCardApp.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 
 import CCardApp.view.AddNewCreditCardFrame;
 import CCardApp.view.CreditcardFrame;
@@ -12,6 +13,7 @@ import framework.model.CustomerType;
 import framework.model.IAddress;
 import framework.view.AddAccountFrame;
 import framework.view.MainFrame;
+import CCardApp.view.ReportFrame;
 
 public class CreditCardController {
 
@@ -66,6 +68,11 @@ public class CreditCardController {
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			// TODO Auto-generated method stub
+			
+			List<String[]> report = creditCardApplication.generateReport();
+			ReportFrame reportFrame = new ReportFrame(creditCardFrame);
+			reportFrame.displayReport(report);
+			reportFrame.setVisible(true);
 		}
 
 	}

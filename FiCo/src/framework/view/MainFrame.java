@@ -57,7 +57,7 @@ public class MainFrame extends JFrame implements IGUI {
 		infoJScrollPane.setBounds(12, 92, 444, 160);
 		infoJScrollPane.getViewport().add(infoTable);
 		
-		rowdata = new String[8];
+		rowdata = new String[9];
 		
 		exitButton.setBounds(468, 224, 96, 33);
 		frameJPanel.add(exitButton);

@@ -1,5 +1,9 @@
 package CCardApp;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 import framework.model.*;
 import CCardApp.controller.*;
 import CCardApp.view.*;
@@ -36,4 +40,16 @@ public class CCreditApplication extends FinCo {
 
     }
 
+    public List<String[]> generateReport() {
+        List<String[]> report = new ArrayList<String[]>();
+        Iterator<IAccount> it = super.accountList.iterator();
+        IAccount acct;
+        while (it.hasNext()) {
+            acct = it.next();
+            //sreport.add(acct.generateReport());
+
+        }
+
+        return report;
+    }
 }
